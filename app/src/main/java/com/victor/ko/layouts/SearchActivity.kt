@@ -3,7 +3,6 @@ package com.victor.ko.layouts
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import com.victor.ko.layouts.databinding.ActivitySearchBinding
 
 //import com.victor.ko.layouts.databinding.
@@ -18,16 +17,20 @@ class SearchActivity : AppCompatActivity(){
         setContentView(bnd.root)
 
         val recyclerView = bnd.myRecycleView
-        val adapter = RecyclerViewAdapter(Data.getObjects()/*, ::adapterOnClick*/) //thisClass::adapterOnClick
+        val adapter = RecyclerViewAdapter(Data.getObjects(), ::adapterOnClick) //thisClass::adapterOnClick
 
         recyclerView.adapter = adapter
 
         /**
          * AutoFitGridLayoutManager that auto fits the cells by the column width defined.
          */
-        val layoutManager = GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false)
+        //val layoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
+        /**
+         * AutoFitGridLayoutManager that auto fits the cells by the column width defined.
+         */
+        val layoutManager = AutoFitGridLayoutManager(this, 500)
         recyclerView.layoutManager = layoutManager
-        //val manager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
+
     }
 
     private fun adapterOnClick(item: DataModel) {

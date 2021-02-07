@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class RecyclerViewAdapter(
-    private val items: List<DataModel>/*,
-                          private val onClick: (DataModel) -> Unit*/
+    private val items: List<DataModel>,
+                          private val onClick: (DataModel) -> Unit
 ) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
     //var items: List<DataModel> = emptyList()
 
-    class ViewHolder(itemView: View/*, val onClick: (DataModel) -> Unit*/) :
+    class ViewHolder(itemView: View, val onClick: (DataModel) -> Unit) :
         RecyclerView.ViewHolder(itemView) {
 
         private val textView: TextView = itemView.findViewById(R.id.textView)
@@ -27,14 +27,14 @@ class RecyclerViewAdapter(
 
         //private val relativeLayout = itemView.findViewById(R.id.linearLayout) as RelativeLayout?
         private var currentDataModel: DataModel? = null
-/*
+
         init {
             itemView.setOnClickListener {
                 currentDataModel?.let {
                     onClick(it)
                 }
             }
-        }*/
+        }
 
         fun bind(dataModel: DataModel) {
             currentDataModel = dataModel
@@ -50,7 +50,7 @@ class RecyclerViewAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_view_item, parent, false)
-        return ViewHolder(view/*, onClick*/)
+        return ViewHolder(view, onClick)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

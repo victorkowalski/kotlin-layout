@@ -15,12 +15,12 @@
         android:layout_marginEnd="10dp"
         app:divider="@color/design_default_color_primary"
         app:iconifiedByDefault="false"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:queryHint="search_hint"
-        app:showDividers="middle" />
+        app:showDividers="middle"
+        android:focusable="false"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecycleView"
