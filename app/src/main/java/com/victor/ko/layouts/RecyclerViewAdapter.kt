@@ -1,5 +1,6 @@
 package com.victor.ko.layouts
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +10,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class RecyclerViewAdapter(private val items: List<DataModel>/*,
-                          private val onClick: (DataModel) -> Unit*/) :
+class RecyclerViewAdapter(
+    private val items: List<DataModel>/*,
+                          private val onClick: (DataModel) -> Unit*/
+) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
     //var items: List<DataModel> = emptyList()
@@ -19,7 +22,8 @@ class RecyclerViewAdapter(private val items: List<DataModel>/*,
         RecyclerView.ViewHolder(itemView) {
 
         private val textView: TextView = itemView.findViewById(R.id.textView)
-        //private val imageView: ImageView = itemView.findViewById(R.id.imageView)
+        private val imageView: ImageView = itemView.findViewById(R.id.imageView)
+        private val relativeLayout: RelativeLayout = itemView.findViewById(R.id.relativeLayout)
 
         //private val relativeLayout = itemView.findViewById(R.id.linearLayout) as RelativeLayout?
         private var currentDataModel: DataModel? = null
@@ -35,8 +39,10 @@ class RecyclerViewAdapter(private val items: List<DataModel>/*,
         fun bind(dataModel: DataModel) {
             currentDataModel = dataModel
 
-            //textView.text = dataModel.text
-            //imageView.setImageResource(dataModel.drawable)
+            textView.text = dataModel.text
+            imageView.setImageResource(dataModel.drawable)
+            relativeLayout.setBackgroundColor(Color.parseColor(dataModel.color))
+            val temp = 5
         }
 
     }

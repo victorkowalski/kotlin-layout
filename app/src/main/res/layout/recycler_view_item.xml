@@ -12,8 +12,7 @@
         card_view:cardCornerRadius="8dp"
         card_view:cardElevation="10dp"
         card_view:cardMaxElevation="10dp"
-        card_view:contentPadding="10dp"
-        android:background="@color/purple_200">
+        card_view:contentPadding="10dp">
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -21,16 +20,22 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center">
-        <!--ImageView
+        <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:padding="5dp"
-            card_view:tint="@android:color/white" /-->
+            android:padding="5dp"/>
+
+            <!--ImageView
+                android:id="@+id/productImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:tint="@android:color/white"
+                android:layout_gravity="center"
+                android:src="@drawable/battle"/-->
         <TextView
             android:id="@+id/textView"
-            android:text="testt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
