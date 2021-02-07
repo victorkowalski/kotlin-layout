@@ -8,6 +8,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
         //setContentView(R.layout.test)
-        setContentView(R.layout.activity_search)
+        //setContentView(R.layout.activity_search)
+        setContentView(R.layout.card_view)
     }
 }
