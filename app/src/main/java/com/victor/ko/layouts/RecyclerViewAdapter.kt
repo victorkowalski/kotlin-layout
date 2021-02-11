@@ -11,10 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class RecyclerViewAdapter(
-    private val items: List<DataModel>,
-                          private val onClick: (DataModel) -> Unit
-) :
-    RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+    private val items: List<DataModel>, private val onClick: (DataModel) -> Unit
+) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
     //var items: List<DataModel> = emptyList()
 
@@ -42,7 +40,6 @@ class RecyclerViewAdapter(
             textView.text = dataModel.text
             imageView.setImageResource(dataModel.drawable)
             relativeLayout.setBackgroundColor(Color.parseColor(dataModel.color))
-            val temp = 5
         }
 
     }

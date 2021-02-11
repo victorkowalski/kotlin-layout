@@ -26,7 +26,7 @@ class AutoFitGridLayoutManager(context: Context?, columnWidth: Int) :
         super.onLayoutChildren(recycler, state)
 
         if (columnWidthChanged && columnWidth > 0) {
-            val totalSpace: Int = if (orientation === VERTICAL) {
+            val totalSpace: Int = if (orientation == VERTICAL) {
                 width - paddingRight - paddingLeft
             } else {
                 height - paddingTop - paddingBottom
